@@ -21,6 +21,7 @@ public class movableobject : MonoBehaviour
     private float maxspeedchange;
     private float acceleration;
     private bool onground;
+    bool playercol = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,8 +35,9 @@ public class movableobject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         direction.x = input.retrievmoveinput();
-        if (input.retrievinteractinput())
+        if (input.retrievinteractinput()&&playercol)
         {
             desiredvelocity = new Vector2(direction.x, 0f) * Mathf.Max(maxspeed, 0f);
         }
@@ -44,7 +46,7 @@ public class movableobject : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (input.retrievinteractinput())
+        if (input.retrievinteractinput()&&playercol)
         {
             onground = gr.getonground();
             velocity = body.velocity;
@@ -61,10 +63,19 @@ public class movableobject : MonoBehaviour
         }
 
 
-
-
-
-
-
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playercol = true;
+        }
+    }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            playercol = false;
+        }
     }
 }
