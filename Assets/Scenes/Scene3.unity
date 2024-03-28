@@ -1803,7 +1803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  speedx: 0
+  speedx: 1
   speedy: 0
   rb: {fileID: 792616208}
 --- !u!50 &792616208
