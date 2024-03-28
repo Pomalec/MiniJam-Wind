@@ -22,17 +22,10 @@ public class movableobject : MonoBehaviour
     private float acceleration;
     private bool onground;
     bool playercol = false;
-    SpriteRenderer m_SpriteRenderer;
-    //The Color to be assigned to the Renderer’s Material
-    Color m_NewColor;
     // Start is called before the first frame update
     void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
-        //Fetch the SpriteRenderer from the GameObject
-        m_SpriteRenderer = GetComponent<SpriteRenderer>();
-        //Set the GameObject's Color quickly to a set Color (blue)
-        m_SpriteRenderer.color = Color.blue;
     }
     private void Awake()
     {
@@ -42,7 +35,7 @@ public class movableobject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_NewColor = new Color(0, 100, 0);
+
         direction.x = input.retrievmoveinput();
         if (input.retrievinteractinput()&&playercol)
         {
@@ -57,6 +50,7 @@ public class movableobject : MonoBehaviour
         {
             onground = gr.getonground();
             velocity = body.velocity;
+
             acceleration = onground ? maxacceleration : maxairacceleration;
             maxspeedchange = acceleration * Time.deltaTime;
             velocity.x = Mathf.MoveTowards(velocity.x, desiredvelocity.x, maxspeedchange);
@@ -70,31 +64,18 @@ public class movableobject : MonoBehaviour
 
 
     }
-    
-    void OnMouseDown()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        
-            if (playercol)
-            {
-                playercol = false;
-                m_NewColor = new Color(0, 0, 100);
-
-                //Set the SpriteRenderer to the Color defined by the Sliders
-                
-            }
-            else
-            {
-                playercol = true;
-                //Set the Color to the values gained from the Sliders
-                m_NewColor = new Color(0, 0, 0);
-
-                //Set the SpriteRenderer to the Color defined by the Sliders
-                
-            }
-            m_SpriteRenderer.color = m_NewColor;
-        
-       
-
-
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playercol = true;
+        }
+    }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            playercol = false;
+        }
     }
 }

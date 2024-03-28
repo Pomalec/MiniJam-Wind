@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4755406914536648080}
   - component: {fileID: 8555760558950685469}
   - component: {fileID: 6200625120229139661}
+  - component: {fileID: 6585340972601305531}
   - component: {fileID: 7698674995020155077}
   - component: {fileID: 1898295327748247370}
-  - component: {fileID: 1888788706044035524}
   m_Layer: 0
   m_Name: Square (1)
   m_TagString: Untagged
@@ -97,7 +97,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630857188775870611}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -161,6 +161,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6585340972601305531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630857188775870611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14bdf59b97c23424fa7c1adbd418838f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 11400000, guid: e0a017df7d0340443ab49f80fe5d5ff5, type: 2}
+  maxspeed: 4
+  maxacceleration: 35
+  maxairacceleration: 20
+  ladder:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &7698674995020155077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +199,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630857188775870611}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
@@ -188,22 +207,3 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!114 &1888788706044035524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630857188775870611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7f9ebb1605d9c4d96729b3027ea291, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  input: {fileID: 0}
-  maxspeed: 4
-  maxacceleration: 35
-  maxairacceleration: 20
-  ladder:
-    serializedVersion: 2
-    m_Bits: 0

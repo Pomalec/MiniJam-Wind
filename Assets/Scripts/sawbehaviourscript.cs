@@ -8,7 +8,7 @@ public class sawbehaviourscript : MonoBehaviour
     private float horizontal;
     private float vertical;
     public float count;
-    public float speedx=1;
+    public float speedx;
     public float speedy;
     [SerializeField]private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -27,15 +27,16 @@ public class sawbehaviourscript : MonoBehaviour
 
     private void moving()
     {
-        if (speedx==0)
-        {
-            rb.velocity = new Vector2(0, rb.velocity.y + speedy);
+        
+       if(speedx == 0){
+         rb.velocity = new Vector2(0,rb.velocity.y + speedy);
         }
-        else
-        {
-            rb.velocity = new Vector2(rb.velocity.x + speedx, rb.velocity.y + speedy);
+        else if(speedy == 0){
+         rb.velocity = new Vector2(rb.velocity.x + speedx, 0);
         }
-       
+        else{
+        rb.velocity = new Vector2(rb.velocity.x + speedx, rb.velocity.y + speedy);
+        }
         
         
     }
