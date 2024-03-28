@@ -190,11 +190,11 @@ MonoBehaviour:
   maxairacceleration: 20
   ladder:
     serializedVersion: 2
-<<<<<<< HEAD
+
     m_Bits: 8
-=======
+
     m_Bits: 0
->>>>>>> 26e1d48ef9d4a2f9e5bcc936e768a2cfb934aed7
+
   health: 100
   deathEffect: {fileID: 1755349173569476, guid: 3c45864be6a059a4a82a25e285298338, type: 3}
 --- !u!114 &905288883799464073
