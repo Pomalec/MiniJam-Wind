@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class movableobject : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class movableobject : MonoBehaviour
     private Vector2 desiredvelocity;
     private Vector2 velocity;
     private bool m_FacingRight = true;
+    public UnityEvent selected;
+    public UnityEvent deselected;
     private Rigidbody2D body;
     private ground gr;
     BoxCollider2D boxCollider;
@@ -42,6 +45,11 @@ public class movableobject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        onground = gr.getonground();
+        if (onground)
+        {
+            body.gravityScale = 1f;
+        }
         m_NewColor = new Color(0, 100, 0);
         direction.x = input.retrievmoveinput();
         if (input.retrievinteractinput()&&playercol)
@@ -53,6 +61,7 @@ public class movableobject : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         if (input.retrievinteractinput()&&playercol)
         {
             onground = gr.getonground();
@@ -70,7 +79,18 @@ public class movableobject : MonoBehaviour
 
 
     }
-    
+    public void setplayercol()
+    {
+        
+            playercol = true;
+        
+       
+    }
+    public void setplayercolf()
+    {
+
+        playercol = false;
+    }
     void OnMouseDown()
     {
         
@@ -78,7 +98,7 @@ public class movableobject : MonoBehaviour
             {
                 playercol = false;
                 m_NewColor = new Color(0, 0, 100);
-
+           
                 //Set the SpriteRenderer to the Color defined by the Sliders
                 
             }
@@ -87,7 +107,7 @@ public class movableobject : MonoBehaviour
                 playercol = true;
                 //Set the Color to the values gained from the Sliders
                 m_NewColor = new Color(0, 0, 0);
-
+            
                 //Set the SpriteRenderer to the Color defined by the Sliders
                 
             }
