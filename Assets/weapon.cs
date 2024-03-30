@@ -7,7 +7,7 @@ using UnityEngine.Assertions.Must;
 
 public class weapon : MonoBehaviour
 {
-    //public Animator animator;
+    public Animator animator;
     public Transform firePoint;
     public GameObject bulletPrefab;
     
@@ -18,10 +18,10 @@ public class weapon : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetButtonDown("Fire3"))
+        if (Input.GetButtonDown("Fire1"))
         {
 
-           // animator.SetBool("isfiring", true);
+            animator.SetBool("isfiring", true);
             
             Shoot();
 
