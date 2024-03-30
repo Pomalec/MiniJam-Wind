@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/mainm.unity
     guid: 23a4ac33cf77ee74b8b198a72581ef68
   - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 04d0eda6f5fd4f8468eceeac19a40145
+  - enabled: 1
     path: Assets/Scenes/Pomascene.unity
     guid: 3781c423686888446af79083860861d5
   m_configObjects: {}
