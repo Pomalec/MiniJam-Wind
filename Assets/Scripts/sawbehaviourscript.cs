@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class sawbehaviourscript : MonoBehaviour
 {
-    private float horizontal;
-    private float vertical;
-    public float count;
     public float speedx;
     public float speedy;
     [SerializeField]private Rigidbody2D rb;
