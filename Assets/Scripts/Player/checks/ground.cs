@@ -11,12 +11,12 @@ public class ground : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         evaluatecollision(collision);
-        retrievefriction(collision);
+       // retrievefriction(collision);
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
         evaluatecollision(collision);
-        retrievefriction(collision);
+       // retrievefriction(collision);
     }
     private void OnCollisionExit2D(Collision2D collision)
     {

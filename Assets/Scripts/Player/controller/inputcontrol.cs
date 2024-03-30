@@ -9,4 +9,6 @@ public abstract class inputcontrol : ScriptableObject
     public abstract float retrievmoveupinput();
     public abstract bool retrievejumpinput();
     public abstract bool retrievinteractinput();
+
+    public abstract bool retrievewindability();
 }

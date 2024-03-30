@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 6811809319457446070}
   - component: {fileID: 4368778459563952160}
   - component: {fileID: 2694943416541385136}
+  - component: {fileID: 5756594780070667919}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -190,13 +191,9 @@ MonoBehaviour:
   maxairacceleration: 20
   ladder:
     serializedVersion: 2
-
-    m_Bits: 8
-
     m_Bits: 0
-
   health: 100
-  deathEffect: {fileID: 1755349173569476, guid: 3c45864be6a059a4a82a25e285298338, type: 3}
+  deathEffect: {fileID: 0}
 --- !u!114 &905288883799464073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +237,23 @@ EdgeCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
+
+    
+          
+            
+    
+
+          
+          Expand Down
+          
+            
+    
+
+          
+          Expand Up
+    
+    @@ -326,8 +329,9 @@
+  
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.5}
   m_EdgeRadius: 0
@@ -329,9 +343,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e31c37a0bdd6444284390065f0c94f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 312866676570808774}
   firePoint: {fileID: 6005349033331713387}
-  bulletPrefab: {fileID: 8210815759473389654, guid: 10fbc3fcce080004da24c84560b53057, type: 3}
+  bulletPrefab: {fileID: 1630857188775870611, guid: 47001c2c4ef47f9468f058c279475f04, type: 3}
 --- !u!114 &6811809319457446070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,6 +368,23 @@ MonoBehaviour:
       m_Calls: []
   m_ControlsChangedEvent:
     m_PersistentCalls:
+
+    
+          
+            
+    
+
+          
+          Expand Down
+          
+            
+    
+
+          
+          Expand Up
+    
+    @@ -459,24 +463,6 @@
+  
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
@@ -463,6 +493,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxhealth: 102
   health: 0
+--- !u!114 &5756594780070667919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5576126010493799385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6297ea2e045b4b043a46a715630bd72f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected:
+    m_PersistentCalls:
+      m_Calls: []
+  deselected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8973839658635009318
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,7 +536,7 @@ Transform:
   m_GameObject: {fileID: 8973839658635009318}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.06, y: -3.18, z: 0}
+  m_LocalPosition: {x: 5.54, y: -2.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

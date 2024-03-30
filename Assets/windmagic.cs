@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class windmagic : MonoBehaviour
 {
     bool sel;
+    [SerializeField] private inputcontrol input = null;
     public UnityEvent selected;
     public UnityEvent deselected;
     // Start is called before the first frame update

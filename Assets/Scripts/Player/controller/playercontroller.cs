@@ -22,7 +22,11 @@ public class playercontroller : inputcontrol
     {
         return Input.GetButton("Fire2");
     }
-    
+    public override bool retrievewindability()
+    {
+        return Input.GetButton("e");
+    }
+
 }
 
 
