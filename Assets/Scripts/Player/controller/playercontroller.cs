@@ -24,7 +24,7 @@ public class playercontroller : inputcontrol
     }
     public override bool retrievewindability()
     {
-        return Input.GetButton("e");
+        return Input.GetButton("Fire4");
     }
 
 }
