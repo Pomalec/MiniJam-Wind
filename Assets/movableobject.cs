@@ -50,6 +50,10 @@ public class movableobject : MonoBehaviour
         {
             body.gravityScale = 1f;
         }
+        else
+        {
+            body.gravityScale = 9.1f;
+        }
         m_NewColor = new Color(0, 100, 0);
         direction.x = input.retrievmoveinput();
         if (input.retrievinteractinput()&&playercol)
